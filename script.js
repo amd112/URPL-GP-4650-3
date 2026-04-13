@@ -48,23 +48,27 @@ document.addEventListener('DOMContentLoaded', () => {
         {lng: -73.89203, lat: 40.88416, address: "3980 Orloff Ave", year: 1990, direct: "n"},
         {lng: -73.97256, lat: 40.74842, address: "305 E 40th", year: 1990, direct: "y"}, 
 
+        {lng: -73.97653, lat: 40.74004, address: "jittered for privacy", year: 2000, direct: "y"}, // w
 
-        {lng: -73.97395, lat: 40.73740, address: "Waterside Plaza", year: 2000, direct: "y"}
+        {lng: -73.98868, lat: 40.74540, address: "jittered for privacy", year: 2010, direct: "n"}, // i
+        {lng: -73.95065, lat: 40.67575, address: "jittered for privacy", year: 2010, direct: "y"}, // ch
+        {lng: -73.95272, lat: 40.77394, address: "jittered for privacy", year: 2010, direct: "n"}  // h
     ];
 
 const decadeColors = {
-        1890: '#00204c', // Deep Navy (Oldest)
-        1900: '#1d2454',
-        1910: '#34275a',
-        1920: '#4b285f',
-        1930: '#612963', // Plum
-        1940: '#772965',
-        1950: '#8d2765',
-        1960: '#a32364',
-        1970: '#b91d60',
-        1980: '#cd1659', // Deep Red
-        1990: '#e10d51',
-        2000: '#f50046'  // Vibrant Crimson (Most Recent)
+        1890: '#00184a', // dark blue
+        1900: '#30237d',
+        1910: '#6129a3', 
+        1920: '#9227ba', // purple
+        1930: '#c020c0', 
+        1940: '#e31cba',
+        1950: '#fa1da8', // hot pink
+        1960: '#ff2a91', 
+        1970: '#ff3d7b', 
+        1980: '#ff5266', 
+        1990: '#f96754', // orange/coral
+        2000: '#ed7c45', 
+        2010: '#df9039'  // bronze/yellow
     };
 
 const geojson = {
@@ -102,6 +106,7 @@ const geojson = {
         let label = `19${decade.substring(2)}s`;
         if(decade === "1890") label = "1890s";
         if(decade === "2000") label = "2000s";
+        if(decade === "2010") label = "2010s";
         item.innerHTML = `<div class="legend-color" style="background:${decadeColors[decade]}"></div> ${label}`;
         legendDiv.appendChild(item);
     });
@@ -128,8 +133,8 @@ const geojson = {
             source: 'family-data',
             paint: {
                 'circle-color': ['get', 'color'],
-                'circle-radius': 8,
-                'circle-stroke-width': 1.5,
+                'circle-radius': 6,
+                'circle-stroke-width': 1,
                 'circle-stroke-color': '#ffffff'
             }
         });
