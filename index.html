@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Map</title>
+    <title>Anne's Family History Map</title>
+    
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css' rel='stylesheet' />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
-    <link href="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.css" rel="stylesheet">
-	<script src="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.js"></script>
-  </head>
+</head>
+<body>
 
-  <body>
-  	<div id="map-container">
-  		
-  	</div>
-    <script src="index.js"></script>
-    <script>
-	// TO MAKE THE MAP APPEAR YOU MUST
-	// ADD YOUR ACCESS TOKEN FROM
-	// https://account.mapbox.com
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYW1kMTEyIiwiYSI6ImNsZnRxdGw1cTAzamozcXJ0YW82bWJxbWwifQ.HuZXavzErnIb_EA-sbEAUw';
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/standard', // Use the standard style for the map
-        projection: 'globe', // display the map as a globe
-        zoom: 1, // initial zoom level, 0 is the world view, higher values zoom in
-        center: [30, 15] // center the map on this longitude and latitude
-    });
+    <div id="welcome-modal">
+        <div class="modal-content">
+            <h1>My Family <3s New York</h1>
+            <p>My family has lived in the city since my great-great-great-grandfather arrived in New York in 1888. In the last few years I've been learning more about my family history, and now I've compiled all the NYC family addresses that I know about from 1890 to 2000. </p>
+            <button class="start-btn" id="start-btn">Start Exploring</button>
+        </div>
+    </div>
 
-    map.addControl(new mapboxgl.NavigationControl());
-    map.scrollZoom.disable();
+    <header>
+        <div class="header-title">Anne's Family History</div>
+        <button class="filter-btn active" data-filter="all">All Locations</button>
+        <button class="filter-btn" data-filter="direct">Direct Lineage</button>
+        <button class="filter-btn" data-filter="extended">Extended Family</button>
+        <button class="filter-btn" data-filter="early">Pre-1950</button>
+        <button class="filter-btn" data-filter="late">Post-1950</button>
+    </header>
 
-    map.on('style.load', () => {
-        map.setFog({}); // Set the default atmosphere style
-    });
-</script>
-  </body>
+    <div id="legend">
+        <strong>Decade</strong><br><br>
+        </div>
 
+    <div id="map"></div>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js'></script>
+    
+    <script src="script.js"></script>
+</body>
 </html>
