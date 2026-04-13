@@ -73,9 +73,9 @@ const geojson = {
             const decade = Math.floor(loc.year / 10) * 10;
             
             // add a jitter to prevent perfect overlaps. implementing randomly
-            // is kinda dumb, and 0.005 degrees is about 500 meters which is p big
-            const jitterLng = (Math.random() - 0.5) * 0.005;
-            const jitterLat = (Math.random() - 0.5) * 0.005;
+            // is kinda dumb, and 0.0005 degrees is about 50 meters which... idk
+            const jitterLng = (Math.random() - 0.5) * 0.0005;
+            const jitterLat = (Math.random() - 0.5) * 0.0005;
 
             return {
                 type: 'Feature',
