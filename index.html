@@ -1,1 +1,41 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.css" rel="stylesheet">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.js"></script>
+  </head>
+
+  <body>
+  	<div id="map-container">
+  		
+  	</div>
+    <script src="index.js"></script>
+    <script>
+	// TO MAKE THE MAP APPEAR YOU MUST
+	// ADD YOUR ACCESS TOKEN FROM
+	// https://account.mapbox.com
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYW1kMTEyIiwiYSI6ImNsZnRxdGw1cTAzamozcXJ0YW82bWJxbWwifQ.HuZXavzErnIb_EA-sbEAUw';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/standard', // Use the standard style for the map
+        projection: 'globe', // display the map as a globe
+        zoom: 1, // initial zoom level, 0 is the world view, higher values zoom in
+        center: [30, 15] // center the map on this longitude and latitude
+    });
+
+    map.addControl(new mapboxgl.NavigationControl());
+    map.scrollZoom.disable();
+
+    map.on('style.load', () => {
+        map.setFog({}); // Set the default atmosphere style
+    });
+</script>
+  </body>
+
+</html>
