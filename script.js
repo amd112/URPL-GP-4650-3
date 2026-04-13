@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
         {lng: -73.96665, lat: 40.68619, address: "386 Waverly Avenue", year: 1980, direct: "n"},
 
         {lng: -73.89203, lat: 40.88416, address: "3980 Orloff Ave", year: 1990, direct: "n"},
-        {lng: -73.96645, lat: 40.76117, address: "305 E 40th", year: 1990, direct: "y"}, 
+        {lng: -73.97256, lat: 40.74842, address: "305 E 40th", year: 1990, direct: "y"}, 
 
 
-        {lng: -73.97539, lat: 40.73740, address: "Waterside Plaza", year: 2000, direct: "y"}
+        {lng: -73.97395, lat: 40.73740, address: "Waterside Plaza", year: 2000, direct: "y"}
     ];
 
 const decadeColors = {
