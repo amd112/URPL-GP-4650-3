@@ -4,7 +4,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW1kMTEyIiwiYSI6ImNtbnhxNHVsbjA0dDUycHExZWRqN2dtaWEifQ.RchV-MZSTqwC8fMtMIy_Xg';
     
 const map = new mapboxgl.Map({
-     container: 'map',
+     container: 'map-container',
         style: 'mapbox://styles/mapbox/standard', // Use the standard style for the map
         projection: 'globe', // display the map as a globe
         zoom: 1, // initial zoom level, 0 is the world view, higher values zoom in
