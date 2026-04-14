@@ -49,12 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
         {lng: -73.89203, lat: 40.88416, address: "3980 Orloff Ave", year: 1990, direct: "n"},
         {lng: -73.97256, lat: 40.74842, address: "305 E 40th", year: 1990, direct: "y"}, 
 
-        {lng: -73.97653, lat: 40.74004, address: "jittered for privacy", year: 2000, direct: "y"}, // w
+        {lng: -73.97653, lat: 40.74004, address: "-", year: 2000, direct: "y"}, // w
 
-        {lng: -73.98868, lat: 40.74540, address: "jittered for privacy", year: 2010, direct: "n"}, // i
-        {lng: -73.95065, lat: 40.67575, address: "jittered for privacy", year: 2010, direct: "y"}, // ch
-        {lng: -73.95272, lat: 40.77394, address: "jittered for privacy", year: 2010, direct: "n"},  // h
-        {lng: -73.94522, lat: 40.77741, address: "jittered for privacy", year: 2010, direct: "n"}  // h2
+        {lng: -73.98868, lat: 40.74540, address: "-", year: 2010, direct: "n"}, // i
+        {lng: -73.95065, lat: 40.67575, address: "-", year: 2010, direct: "y"}, // ch
+        {lng: -73.95272, lat: 40.77394, address: "-", year: 2010, direct: "n"},  // h
+        {lng: -73.94522, lat: 40.77741, address: "-", year: 2010, direct: "n"}  // h2
     ];
 
 const decadeColors = {
