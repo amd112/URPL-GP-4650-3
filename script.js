@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         {lng: -73.94713, lat: 40.72479, address: "68A Newel St", year: 1970, direct: "n"},
         {lng: -73.94857, lat: 40.6855, address: "264 Monroe Street", year: 1970, direct: "n"},
+        {lng:-73.98991, lat: 40.74150, address: "186 5th Ave", year: 1970, direct: "y"},  // 
 
         {lng: -73.95806, lat: 40.67462, address: "601 Park Pl", year: 1980, direct: "y"},
         {lng: -73.96665, lat: 40.68619, address: "386 Waverly Avenue", year: 1980, direct: "n"},
@@ -52,7 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         {lng: -73.98868, lat: 40.74540, address: "jittered for privacy", year: 2010, direct: "n"}, // i
         {lng: -73.95065, lat: 40.67575, address: "jittered for privacy", year: 2010, direct: "y"}, // ch
-        {lng: -73.95272, lat: 40.77394, address: "jittered for privacy", year: 2010, direct: "n"}  // h
+        {lng: -73.95272, lat: 40.77394, address: "jittered for privacy", year: 2010, direct: "n"},  // h
+        {lng: -73.94522, lat: 40.77741, address: "jittered for privacy", year: 2010, direct: "n"}  // h2
     ];
 
 const decadeColors = {
