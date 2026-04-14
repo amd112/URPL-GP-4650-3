@@ -124,6 +124,23 @@ button.filter-btn.active {
     vertical-align: middle;
 }
 
+/* --- Popup Images --- */
+.popup-image {
+    width: 100%;
+    max-height: 280px; 
+    
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    display: block;
+}
+
+.mapboxgl-popup {
+    /* Mapbox default is often 240px. We are bumping it up significantly */
+    max-width: 400px !important; 
+}
+
 /* --- Legend --- */
 #legend {
     position: absolute;

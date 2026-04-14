@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
         {lng: -73.98476, lat: 40.7178, address: "51 Attorney St", year: 1900, direct: "y"},
 
         {lng: -73.98621, lat: 40.72065, address: "171 Norfolk St", year: 1910, direct: "n"},
-        {lng: -73.99013, lat: 40.72174, address: "212 Eldridge St", year: 1910, direct: "n"},
+        {lng: -73.99013, lat: 40.72174, address: "212 Eldridge St", year: 1910, direct: "n", image: "https://oldnyc-assets.nypl.org/600px/1516895-a.jpg"},
         {lng: -73.98143, lat: 40.71686, address: "86 Sheriff St", year: 1910, direct: "y"},
         {lng: -74.00389, lat: 40.72108, address: "357 Canal Street", year: 1910, direct: "n"},
 
-        {lng: -73.9779, lat: 40.72764, address: "626 E 12th St", year: 1920, direct: "y"},
-        {lng: -73.98033, lat: 40.72628, address: "189 Avenue B", year: 1920, direct: "y"},
-        {lng: -73.98311, lat: 40.71538, address: "6 Willett St", year: 1920, direct: "y"},
+        {lng: -73.9779, lat: 40.72764, address: "626 E 12th St", year: 1920, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/711121f-a.jpg"},
+        {lng: -73.98033, lat: 40.72628, address: "189 Avenue B", year: 1920, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/711009f-a.jpg"},
+        {lng: -73.98311, lat: 40.71538, address: "6 Willett St", year: 1920, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/720111f-c.jpg"},
 
         {lng: -73.9253, lat: 40.66998, address: "261 Buffalo Avenue", year: 1930, direct: "y"},
         {lng: -73.94267, lat: 40.70559, address: "124 Graham Avenue", year: 1930, direct: "n"},
@@ -77,24 +77,19 @@ const geojson = {
         type: 'FeatureCollection',
         features: rawData.map(loc => {
             const decade = Math.floor(loc.year / 10) * 10;
-            
-            // add a jitter to prevent perfect overlaps. implementing randomly
-            // is kinda dumb, and 0.0005 degrees is about 100 meters which... idk
-            const jitterLng = (Math.random() - 0.5) * 0.001;
-            const jitterLat = (Math.random() - 0.5) * 0.001;
+            const jitterLng = (Math.random() - 0.5) * 0.0003;
+            const jitterLat = (Math.random() - 0.5) * 0.0003;
 
             return {
                 type: 'Feature',
-                geometry: { 
-                    type: 'Point', 
-                    coordinates: [loc.lng + jitterLng, loc.lat + jitterLat]  // actual jitter
-                },
+                geometry: { type: 'Point', coordinates: [loc.lng + jitterLng, loc.lat + jitterLat] },
                 properties: {
                     address: loc.address,
                     year: loc.year,
                     decade: decade,
                     direct: loc.direct,
-                    color: decadeColors[decade] || '#888'
+                    color: decadeColors[decade] || '#888',
+                    image: loc.image || null // <--- ADD THIS LINE
                 }
             };
         })
@@ -150,13 +145,20 @@ const geojson = {
         map.on('mouseleave', 'family-points', () => map.getCanvas().style.cursor = '');
 
         // build html popup so it can be formatted cute
-        map.on('click', 'family-points', (e) => {
+		map.on('click', 'family-points', (e) => {
             const coords = e.features[0].geometry.coordinates.slice();
             const props = e.features[0].properties;
             const lineageText = props.direct === 'y' ? "Direct Lineage" : "Extended Family";
 
+            // CHECK FOR IMAGE: Create the image tag if a URL exists
+            const imageTag = props.image 
+                ? `<img src="${props.image}" alt="Historical view of ${props.address}" class="popup-image">` 
+                : '';
+
+            // Inject the imageTag into the popup HTML
             const html = `
                 <div>
+                    ${imageTag}
                     <div class="popup-year">
                         <span class="popup-decade-badge" style="background:${props.color}"></span>
                         ${props.year}
@@ -166,7 +168,6 @@ const geojson = {
                 </div>
             `;
 
-        	// actually put in the popup
             new mapboxgl.Popup().setLngLat(coords).setHTML(html).addTo(map);
         });
 
