@@ -14,25 +14,25 @@ document.addEventListener('DOMContentLoaded', () => {
         {lng: -73.98419, lat: 40.71532, address: "18 Pitt Street", year: 1890, direct: "n"},
         {lng: -73.98325, lat: 40.71885, address: "113 Ridge Street", year: 1890, direct: "n"},
 
-        {lng: -73.9828, lat: 40.71972, address: "229 Stanton Street", year: 1900, direct: "y"},
+        {lng: -73.9828, lat: 40.71972, address: "229 Stanton Street", year: 1900, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/716766f-a.jpg"},
         {lng: -73.98476, lat: 40.7178, address: "51 Attorney St", year: 1900, direct: "y"},
 
-        {lng: -73.98621, lat: 40.72065, address: "171 Norfolk St", year: 1910, direct: "n"},
+        {lng: -73.98621, lat: 40.72065, address: "171 Norfolk St", year: 1910, direct: "n", image: "https://oldnyc-assets.nypl.org/600px/723455f-a.jpg"},
         {lng: -73.99013, lat: 40.72174, address: "212 Eldridge St", year: 1910, direct: "n", image: "https://oldnyc-assets.nypl.org/600px/1516895-a.jpg"},
-        {lng: -73.98143, lat: 40.71686, address: "86 Sheriff St", year: 1910, direct: "y"},
-        {lng: -74.00389, lat: 40.72108, address: "357 Canal Street", year: 1910, direct: "n"},
+        {lng: -73.98143, lat: 40.71686, address: "86 Sheriff St", year: 1910, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/723455f-a.jpg"},
+        {lng: -74.00389, lat: 40.72108, address: "357 Canal Street", year: 1910, direct: "n", image: "https://oldnyc-assets.nypl.org/600px/724934f-a.jpg"},
 
         {lng: -73.9779, lat: 40.72764, address: "626 E 12th St", year: 1920, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/711121f-a.jpg"},
         {lng: -73.98033, lat: 40.72628, address: "189 Avenue B", year: 1920, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/711009f-a.jpg"},
         {lng: -73.98311, lat: 40.71538, address: "6 Willett St", year: 1920, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/720111f-c.jpg"},
 
-        {lng: -73.9253, lat: 40.66998, address: "261 Buffalo Avenue", year: 1930, direct: "y"},
-        {lng: -73.94267, lat: 40.70559, address: "124 Graham Avenue", year: 1930, direct: "n"},
-        {lng: -73.94686, lat: 40.79161, address: "104 East 105th Street", year: 1930, direct: "n"},
+        {lng: -73.9253, lat: 40.66998, address: "261 Buffalo Avenue", year: 1930, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/706496f-a.jpg"},
+        {lng: -73.94267, lat: 40.70559, address: "124 Graham Avenue", year: 1930, direct: "n", image: "https://oldnyc-assets.nypl.org/600px/705658f-a.jpg"},
+        {lng: -73.94686, lat: 40.79161, address: "104 East 105th Street", year: 1930, direct: "n", image: "https://oldnyc-assets.nypl.org/600px/714963f-a.jpg"},
 
-        {lng: -73.96032, lat: 40.70557, address: "166 Ross Street", year: 1940, direct: "n"},
-        {lng: -73.87279, lat: 40.75233, address: "35-35 95th Street", year: 1940, direct: "y"},
-        {lng: -73.98252, lat: 40.72328, address: "57 Avenue B", year: 1940, direct: "y"},
+        {lng: -73.96032, lat: 40.70557, address: "166 Ross Street", year: 1940, direct: "n", image: "https://oldnyc-assets.nypl.org/600px/703149f-a.jpg"},
+        {lng: -73.87279, lat: 40.75233, address: "35-35 95th Street", year: 1940, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/727107f-a.jpg"},
+        {lng: -73.98252, lat: 40.72328, address: "57 Avenue B", year: 1940, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/716420f-a.jpg"},
 
         {lng: -73.87334, lat: 40.75264, address: "35-05 94th Street", year: 1950, direct: "y"},
         {lng: -73.9974, lat: 40.61124, address: "1814 78th Street", year: 1950, direct: "n"},
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         {lng: -73.94713, lat: 40.72479, address: "68A Newel St", year: 1970, direct: "n"},
         {lng: -73.94857, lat: 40.6855, address: "264 Monroe Street", year: 1970, direct: "n"},
-        {lng:-73.98991, lat: 40.74150, address: "186 5th Ave", year: 1970, direct: "y"},  // 
+        {lng:-73.98991, lat: 40.74150, address: "186 5th Ave", year: 1970, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/708446f-a.jpg"},  // 
 
         {lng: -73.95806, lat: 40.67462, address: "601 Park Pl", year: 1980, direct: "y"},
         {lng: -73.96665, lat: 40.68619, address: "386 Waverly Avenue", year: 1980, direct: "n"},
