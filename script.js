@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         {lng: -73.99013, lat: 40.72174, address: "212 Eldridge St", year: 1910, direct: "n"},
         {lng: -73.98143, lat: 40.71686, address: "86 Sheriff St", year: 1910, direct: "y"},
         {lng: -74.00389, lat: 40.72108, address: "357 Canal Street", year: 1910, direct: "n"},
-        {lng: -73.94857, lat: 40.6855, address: "264 Monroe Street", year: 1910, direct: "n"},
 
         {lng: -73.9779, lat: 40.72764, address: "626 E 12th St", year: 1920, direct: "y"},
         {lng: -73.98033, lat: 40.72628, address: "189 Avenue B", year: 1920, direct: "y"},
@@ -41,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {lng: -73.97815, lat: 40.71292, address: "453 FDR Drive", year: 1960, direct: "y"},
 
         {lng: -73.94713, lat: 40.72479, address: "68A Newel St", year: 1970, direct: "n"},
+        {lng: -73.94857, lat: 40.6855, address: "264 Monroe Street", year: 1970, direct: "n"},
 
         {lng: -73.95806, lat: 40.67462, address: "601 Park Pl", year: 1980, direct: "y"},
         {lng: -73.96665, lat: 40.68619, address: "386 Waverly Avenue", year: 1980, direct: "n"},
