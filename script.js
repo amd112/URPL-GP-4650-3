@@ -34,17 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
         {lng: -73.87279, lat: 40.75233, address: "35-35 95th Street", year: 1940, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/727107f-a.jpg"},
         {lng: -73.98252, lat: 40.72328, address: "57 Avenue B", year: 1940, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/716420f-a.jpg"},
 
-        {lng: -73.87334, lat: 40.75264, address: "35-05 94th Street", year: 1950, direct: "y"},
-        {lng: -73.9974, lat: 40.61124, address: "1814 78th Street", year: 1950, direct: "n"},
+        {lng: -73.87334, lat: 40.75264, address: "35-05 94th Street", year: 1950, direct: "y", image: "https://photos.1940s.nyc/420-jpg/nynyma_rec0040_4_01469_0058.jpg"},
+        {lng: -73.9974, lat: 40.61124, address: "1814 78th Street", year: 1950, direct: "n", image: "https://photos.1940s.nyc/jpg/nynyma_rec0040_3_06261_0012.jpg"},
 
         {lng: -73.97815, lat: 40.71292, address: "453 FDR Drive", year: 1960, direct: "y"},
 
-        {lng: -73.94713, lat: 40.72479, address: "68A Newel St", year: 1970, direct: "n"},
-        {lng: -73.94857, lat: 40.6855, address: "264 Monroe Street", year: 1970, direct: "n"},
+        {lng: -73.94713, lat: 40.72479, address: "68A Newel St", year: 1970, direct: "n", image: "https://80s-nyc.nyc3.digitaloceanspaces.com/photos/3/02684/0004.jpg"},
+        {lng: -73.94857, lat: 40.6855, address: "264 Monroe Street", year: 1970, direct: "n", image: "https://80s-nyc.nyc3.digitaloceanspaces.com/photos/3/01818/0042.jpg"},
         {lng:-73.98991, lat: 40.74150, address: "186 5th Ave", year: 1970, direct: "y", image: "https://oldnyc-assets.nypl.org/600px/708446f-a.jpg"},  // 
 
-        {lng: -73.95806, lat: 40.67462, address: "601 Park Pl", year: 1980, direct: "y"},
-        {lng: -73.96665, lat: 40.68619, address: "386 Waverly Avenue", year: 1980, direct: "n"},
+        {lng: -73.95806, lat: 40.67462, address: "601 Park Pl", year: 1980, direct: "y", image: "https://80s-nyc.nyc3.digitaloceanspaces.com/photos/3/01163/0073.jpg"},
+        {lng: -73.96665, lat: 40.68619, address: "386 Waverly Avenue", year: 1980, direct: "n", image: "https://80s-nyc.nyc3.digitaloceanspaces.com/photos/3/01961/0039.jpg"},
 
         {lng: -73.89203, lat: 40.88416, address: "3980 Orloff Ave", year: 1990, direct: "n"},
         {lng: -73.97256, lat: 40.74842, address: "305 E 40th", year: 1990, direct: "y"}, 
@@ -98,7 +98,7 @@ const geojson = {
 	// ---------------------------------------------------------------------------
     // --- legend ---
     // ---------------------------------------------------------------------------
-    
+
     const legendDiv = document.getElementById('legend');
     
     // Arrays to track our toggle states
