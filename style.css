@@ -113,6 +113,31 @@ button.filter-btn.active {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+.legend-item { 
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 5px; 
+    cursor: pointer;          /* Shows a clicking finger */
+    padding: 4px 8px;         /* Adds a little clickable space */
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.legend-item:hover {
+    background: #f1f5f9;      /* Light gray hover effect */
+}
+
+.legend-item.inactive {
+    opacity: 0.3;             /* Fades out decades that are turned off */
+}
+
+.legend-color { 
+    width: 14px; 
+    height: 14px; 
+    border-radius: 50%; 
+    margin-right: 10px; 
+}
+
 .popup-year { font-weight: bold; color: var(--accent); font-size: 1.1rem; }
 .popup-address { margin: 5px 0; font-size: 0.95rem; }
 .popup-lineage { font-size: 0.8rem; text-transform: uppercase; color: #718096; }

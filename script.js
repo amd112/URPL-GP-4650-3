@@ -95,19 +95,66 @@ const geojson = {
         })
     };
 
+	// ---------------------------------------------------------------------------
     // --- legend ---
+    // ---------------------------------------------------------------------------
+    
     const legendDiv = document.getElementById('legend');
+    
+    // Arrays to track our toggle states
+    const allDecades = Object.keys(decadeColors).map(Number);
+    let activeDecades = [...allDecades]; // Start with everything turned on
+
     Object.keys(decadeColors).forEach(decade => {
         const item = document.createElement('div');
         item.className = 'legend-item';
+        item.setAttribute('data-decade', decade); // Tag the element with its decade
+        
         let label = `19${decade.substring(2)}s`;
         if(decade === "1890") label = "1890s";
         if(decade === "2000") label = "2000s";
         if(decade === "2010") label = "2010s";
+        
         item.innerHTML = `<div class="legend-color" style="background:${decadeColors[decade]}"></div> ${label}`;
         legendDiv.appendChild(item);
-    });
 
+        // --- THE TOGGLE LOGIC ---
+        item.addEventListener('click', () => {
+            const decNum = parseInt(decade);
+
+            if (activeDecades.length === allDecades.length) {
+                // If ALL are showing, isolate just the one we clicked
+                activeDecades = [decNum];
+            } else if (activeDecades.includes(decNum)) {
+                // If it's already on, turn it off
+                activeDecades = activeDecades.filter(d => d !== decNum);
+                // If we just turned off the last one, reset to show everything
+                if (activeDecades.length === 0) {
+                    activeDecades = [...allDecades];
+                }
+            } else {
+                // Otherwise, add it to the visible list
+                activeDecades.push(decNum);
+            }
+
+            // Update the CSS to fade out inactive legend items
+            document.querySelectorAll('.legend-item').forEach(el => {
+                const elDecade = parseInt(el.getAttribute('data-decade'));
+                if (activeDecades.includes(elDecade)) {
+                    el.classList.remove('inactive');
+                } else {
+                    el.classList.add('inactive');
+                }
+            });
+
+            // Reset the Header buttons to "All" so the filters don't conflict
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('[data-filter="all"]').classList.add('active');
+
+            // Apply the actual filter to the Mapbox layer
+            map.setFilter('family-points', ['in', ['get', 'decade'], ['literal', activeDecades]]);
+        });
+    });
     // --- add the map ---
     mapboxgl.accessToken = 'pk.eyJ1IjoiYW1kMTEyIiwiYSI6ImNtbnhxNHVsbjA0dDUycHExZWRqN2dtaWEifQ.RchV-MZSTqwC8fMtMIy_Xg'; 
     const map = new mapboxgl.Map({
